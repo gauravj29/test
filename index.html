@@ -155,18 +155,10 @@
         function(event) {
              console.log('event ',event.detail.Id);	
             embedded_svc.settings.extraPrechatFormDetails[0].value = event.detail.Id; //"0032h00000VJ4XfAAL";  
-		console.log('routing ');
-		embedded_svc.liveAgentAPI.startChat({
-                directToAgentRouting: {
-	            userId: '00504000000uy5TAAQ',		
-                    buttonId: '573040000008OPV',                    
-                    fallback: true
-                },
-                extraPrechatInfo: [],
-                extraPrechatFormDetails: []
-            });
+		console.log('routing data');
+		embedded_svc.settings.fallbackRouting = ['00504000000uy5TAAQ','573040000008OPV'];
 		
-            //event.detail.callback();
+            event.detail.callback();
         },
         false
     ) 
