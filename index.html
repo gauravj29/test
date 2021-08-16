@@ -96,7 +96,7 @@
                 {
                     baseLiveAgentContentURL: 'https://c.la3-c1cs-ia4.salesforceliveagent.com/content',
                     deploymentId: '572040000008OK6',                    
-		    buttonId: '00504000000uy5T_572040000008OK6',	
+		    buttonId: '573040000008OPV',	
                     baseLiveAgentURL: 'https://d.la3-c1cs-ia4.salesforceliveagent.com/chat',
                     eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I2h000000008oEAA_179dbbafab9',
                     isOfflineSupportEnabled: false
@@ -155,6 +155,11 @@
         function(event) {
              console.log('event ',event.detail.Id);	
             embedded_svc.settings.extraPrechatFormDetails[0].value = event.detail.Id; //"0032h00000VJ4XfAAL";  	
+		embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
+	
+		return '00504000000uy5T_573040000008OPV';
+}
+		
             event.detail.callback();
         },
         false
